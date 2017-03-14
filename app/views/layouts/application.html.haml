@@ -1,16 +1,10 @@
 !!!
 %html
   %head
-    %title Todo
+    %title Sofar Bug Board
     = stylesheet_link_tag    "application", media: "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    .row-fluid
-  .span10.offset1
-    .hero-unit.text-center
-      %h1
-        Sofar Bug Board
-      %p
-      = link_to 'New Bug', new_task_path,  class:  'btn btn-primary sofar-btn', remote: true
+    = render partial: "header"
     = yield
