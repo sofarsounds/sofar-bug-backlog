@@ -13,7 +13,13 @@
 
 ActiveRecord::Schema.define(version: 20170313182831) do
 
-# Could not dump table "tasks" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "tasks", force: true do |t|
+    t.string   "title"
+    t.text     "note"
+    t.date     "completed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "priority"
+  end
 
 end
