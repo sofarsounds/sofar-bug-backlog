@@ -1,11 +1,12 @@
 .modal-header
-  %h1 
+  %h1
 = task.new_record? ? 'New Task' : "Editing task #{task.title}"
 = simple_form_for task, class: 'clearfix', remote: true do |f|
   .modal-body
     = f.input :title, as: :string, input_html: { minlength: 10 }
     = f.input :note
     = f.input :priority, as: :select, collection: [ "Highest", "High", "Medium", "Low" ]
-    = f.input :completed, as: :string, input_html: {class: 'datepicker', value: task.completed.present? ? localize(task.completed, format: '%d/%m/%Y') : nil }
+    - unless task.new_record?
+      = f.input :completed, as: :string, input_html: {class: 'datepicker', value: task.completed.present? ? localize(task.completed, format: '%d/%m/%Y') : nil }
   .modal-footer
     = f.submit 'Save', class: 'btn btn-primary sofar-btn'
