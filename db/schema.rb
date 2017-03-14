@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170314141315) do
+ActiveRecord::Schema.define(version: 20170314142025) do
 
   create_table "tasks", force: true do |t|
     t.string   "title"
@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 20170314141315) do
     t.date     "completed"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "priority"
-    t.integer  "reported_count", default: 0
+    t.integer  "priority",       limit: 255, default: 1
+    t.integer  "reported_count",             default: 0
     t.string   "url"
   end
 
