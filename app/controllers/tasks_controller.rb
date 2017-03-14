@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-	
+
 	def new
 	  @task = Task.new
 	  render :show_form
@@ -27,6 +27,13 @@ class TasksController < ApplicationController
 	  save_task
 	end
 
+	def inc
+		@task = Task.find(params[:id])
+		Task.increment_counter(:reported_count, @task.id)
+
+		render :update_inc
+	end
+
 	private
 	def save_task
 	  if @task.save
@@ -38,7 +45,7 @@ class TasksController < ApplicationController
 	end
 
 	def task_params
-	  params.require(:task).permit(:title, :note, :priority, :completed)
+	  params.require(:task).permit(:title, :note, :priority, :completed, :reported_count)
 	end
 
 end

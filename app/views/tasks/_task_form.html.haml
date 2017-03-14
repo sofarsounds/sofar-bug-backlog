@@ -7,6 +7,7 @@
     = f.input :note
     = f.input :priority, as: :select, collection: [ "Highest", "High", "Medium", "Low" ]
     - unless task.new_record?
+      = f.input :reported_count, as: :integer
       = f.input :completed, as: :string, input_html: {class: 'datepicker', value: task.completed.present? ? localize(task.completed, format: '%d/%m/%Y') : nil }
   .modal-footer
     = f.submit 'Save', class: 'btn btn-primary sofar-btn'

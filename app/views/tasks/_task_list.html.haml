@@ -7,15 +7,21 @@
         %th Title
         %th Days Elapsed
         %th Priority
+        %th # Reported
         %th Completed
         %th Actions
     %tbody
       - tasks.each do |task|
-        %tr
+        %tr{id: task.id}
           %td
             %strong= task.title
           %td.text= task.days_elapsed_since_creation
           %td.text= task.priority
+          %td.text
+            %span{id: "#{task.id}-inc"}
+              = task.reported_count
+            = link_to inc_task_path(task), remote: true do
+              %i.icon-plus
           %td.text-success= task.completed
 
           %td
