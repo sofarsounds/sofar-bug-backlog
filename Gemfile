@@ -32,8 +32,19 @@ gem 'bootstrap-sass', '~> 2.3.2.0'
 gem 'simple_form'
 gem  'bootstrap-datepicker-rails'
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'json_spec'
+  gem 'cucumber-rails', require: false
+  gem 'pry-byebug'
+  gem 'html2haml'
+  gem 'thin'
+  gem 'teaspoon-mocha'
+  # gem 'rubocop'
+  # gem 'rubocop-rspec'
+end
+
 group :test do
-  gem 'cucumber-rails', :require => false
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
 end
