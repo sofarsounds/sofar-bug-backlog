@@ -14,7 +14,11 @@
       - tasks.each do |task|
         %tr{id: task.id}
           %td
-            %strong= task.title
+            %strong
+              - if task.url
+                = link_to task.title, task.url
+              - else
+                = task.title
           %td.text= task.days_elapsed_since_creation
           %td.text= task.priority
           %td.text
