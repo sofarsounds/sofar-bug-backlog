@@ -4,10 +4,11 @@
 = simple_form_for task, class: 'clearfix', remote: true do |f|
   .modal-body
     = f.input :title, as: :string, input_html: { minlength: 10 }
-    = f.input :note
+    = f.input :url
     = f.input :priority, as: :select, collection: [ "Highest", "High", "Medium", "Low" ]
     - unless task.new_record?
       = f.input :reported_count, as: :integer
       = f.input :completed, as: :string, input_html: {class: 'datepicker', value: task.completed.present? ? localize(task.completed, format: '%d/%m/%Y') : nil }
+    = f.input :note
   .modal-footer
     = f.submit 'Save', class: 'btn btn-primary sofar-btn'
