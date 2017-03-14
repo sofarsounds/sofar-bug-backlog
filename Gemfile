@@ -32,6 +32,12 @@ gem 'bootstrap-sass', '~> 2.3.2.0'
 gem 'simple_form'
 gem  'bootstrap-datepicker-rails'
 
+group :test do
+  gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
