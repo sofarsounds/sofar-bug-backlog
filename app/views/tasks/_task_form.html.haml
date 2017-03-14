@@ -10,5 +10,6 @@
       = f.input :reported_count, as: :integer
       = f.input :completed, as: :string, input_html: {class: 'datepicker', value: task.completed.present? ? localize(task.completed, format: '%d/%m/%Y') : nil }
     = f.input :note
+    = f.input :created_at, as: :string, input_html: {class: 'datepicker', value: task.created_at.present? ? localize(task.created_at, format: '%d/%m/%Y') : nil }
   .modal-footer
     = f.submit 'Save', class: 'btn btn-primary sofar-btn'
