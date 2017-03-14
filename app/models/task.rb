@@ -3,7 +3,7 @@ class Task < ActiveRecord::Base
 	validate :future_completed_date
 
 	def days_elapsed_since_creation
-		(Time.now - self.created_at).to_i
+		(Time.now.to_date - self.created_at.to_date).to_i
 	end
 
 	private
