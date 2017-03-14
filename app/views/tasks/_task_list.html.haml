@@ -24,12 +24,9 @@
           %td.text
             %span{id: "#{task.id}-inc"}
               = task.reported_count
-            = link_to inc_task_path(task), remote: true do
-              %i.icon-plus
+            = link_to "+", inc_task_path(task), remote: true, class: "btn btn-default btn-xs"
           %td.text-success= task.completed
 
           %td
-            = link_to edit_task_path(task), remote: true do
-              %i.icon-edit
-            = link_to task_path(task), remote: true, method: :delete, data: {confirm: "Are you sure you want to delete task #{task.title}?"} do
-              %i.icon-remove
+            = link_to "Edit", edit_task_path(task), remote: true, class: "btn btn-warning btn-xs"
+            = link_to "X", task_path(task), remote: true, method: :delete, class: "btn btn-danger btn-xs", data: {confirm: "Are you sure you want to delete task #{task.title}?"}
