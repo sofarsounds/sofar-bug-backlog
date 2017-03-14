@@ -2,8 +2,18 @@ class Task < ActiveRecord::Base
 	validates_presence_of :title
 	validate :future_completed_date
 
+	DAYS_LATE = 10
+
 	def days_elapsed_since_creation
 		(Time.now.to_date - self.created_at.to_date).to_i
+	end
+
+	def late?
+		if self.days_elapsed_since_creation >= DAYS_LATE
+			true
+		else
+			false
+		end
 	end
 
 	private
