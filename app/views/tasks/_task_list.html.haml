@@ -15,7 +15,7 @@
         %tr{id: task.id}
           %td
             %strong
-              - if task.url
+              - unless task.url.blank?
                 = link_to task.title, task.url
               - else
                 = task.title
