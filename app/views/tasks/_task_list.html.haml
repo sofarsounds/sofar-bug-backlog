@@ -20,7 +20,7 @@
               - else
                 = task.title
           %td.text= task.days_elapsed_since_creation
-          %td.text= task.priority
+          %td.text= readable_priority(task)
           %td.text
             %span{id: "#{task.id}-inc"}
               = task.reported_count
