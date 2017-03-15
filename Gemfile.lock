@@ -118,6 +118,7 @@ GEM
       byebug (~> 9.0)
       pry (~> 0.10)
     public_suffix (2.0.5)
+    puma (3.7.0)
     rack (1.5.5)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -219,6 +220,7 @@ DEPENDENCIES
   json_spec
   pg
   pry-byebug
+  puma
   rails (= 4.1.16)
   rake (< 11.0)
   rspec-rails
