@@ -6,8 +6,12 @@ gem 'rails', '4.1.16'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3',   group: :development
 gem 'pg',        group: :production
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+
+gem 'bootstrap-sass'
+gem 'sass-rails'
+gem 'simple_form'
+gem  'bootstrap-datepicker-rails'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -29,9 +33,6 @@ gem 'rake', '< 11.0'
 gem 'spring',        group: :development
 
 gem 'haml'
-gem 'bootstrap-sass', '~> 2.3.2.0'
-gem 'simple_form'
-gem  'bootstrap-datepicker-rails'
 
 group :development, :test do
   gem 'rspec-rails'

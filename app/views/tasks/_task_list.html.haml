@@ -1,7 +1,7 @@
 - if tasks.empty?
   %span.text-warning There are no tasks!
 - else
-  %table.table.table-hover.table-bordered
+  %table.table.table-hover
     %thead
       %tr
         %th Title
@@ -12,7 +12,7 @@
         %th Actions
     %tbody
       - tasks.each do |task|
-        %tr{id: task.id, class:"#{task.late? ? 'late-task' : ''}"}
+        %tr{id: task.id, class:"#{task.late? ? 'danger' : ''}"}
           %td
             %strong
               - unless task.url.blank?

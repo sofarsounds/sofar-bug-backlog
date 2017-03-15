@@ -1,0 +1,12 @@
+%nav.navbar.navbar-inverse
+  .container
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header
+      %a.navbar-brand{:href => root_path} Sofar Bug Board
+    -# %p.navbar-text
+    -#   = Task.where.not(:completed).count
+    -#   active bugs.
+    %ul.nav.navbar-nav.navbar-right
+      %li
+        %p.navbar-btn
+          = link_to 'New Bug', new_task_path,  class:  'btn btn-success', remote: true
