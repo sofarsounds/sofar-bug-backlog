@@ -6,6 +6,7 @@ gem 'rails', '4.1.16'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3',   group: :development
 gem 'pg',        group: :production
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -31,6 +32,15 @@ gem 'haml'
 gem 'bootstrap-sass', '~> 2.3.2.0'
 gem 'simple_form'
 gem  'bootstrap-datepicker-rails'
+
+group :production do
+  gem 'newrelic_rpm', require: false
+  gem 'rails_12factor'
+  gem 'puma'
+  gem 'puma_worker_killer'
+  # heroku gzip
+  gem 'heroku-deflater'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
