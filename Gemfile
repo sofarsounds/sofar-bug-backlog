@@ -24,6 +24,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'rake', '< 11.0'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
@@ -40,6 +41,23 @@ group :production do
   gem 'puma_worker_killer'
   # heroku gzip
   gem 'heroku-deflater'
+end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'json_spec'
+  gem 'cucumber-rails', require: false
+  gem 'pry-byebug'
+  gem 'html2haml'
+  gem 'thin'
+  gem 'teaspoon-mocha'
+  # gem 'rubocop'
+  # gem 'rubocop-rspec'
+end
+
+group :test do
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
 end
 
 # Use ActiveModel has_secure_password
