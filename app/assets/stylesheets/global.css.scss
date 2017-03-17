@@ -6,7 +6,17 @@
     
 }
 
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #10ad52;
+    opacity: 0.9;
+}
+
 .hero-unit {
-	
+	background-image: url("bkg-header.jpg");
+}
+
+.hero-unit h1 {
+	color: white;
 }
 
