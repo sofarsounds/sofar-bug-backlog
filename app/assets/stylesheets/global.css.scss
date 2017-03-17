@@ -1,13 +1,33 @@
 .btn-primary {
     background: #10ad52;
     color: #ffffff;
-    width: 100px;
-    padding: 10px;
-    border-color: #10ad52;
+    width: 130px;
+    padding: 15px;
+    
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #10ad52;
+    opacity: 0.9;
 }
 
 .hero-unit {
-	width: 900px;
-
+	background-image: url("bkg-header.jpg");
 }
 
+.hero-unit h1 {
+	color: white;
+}
+
+.modal-body {
+	padding-left: 20px;
+}
+
+.modal-footer {
+	margin-bottom: -20px;
+}
+
+.sub-btn {
+	padding: 10px;
+}
