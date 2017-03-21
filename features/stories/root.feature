@@ -6,3 +6,7 @@ Feature: Homepage exists
   Scenario: Visit homepage
     When  I visit the homepage
     Then  I should see "Sofar Bug Board"
+
+  Scenario: Window title
+    When I visit the homepage
+    Then the window title is "Sofar Bug Board"
