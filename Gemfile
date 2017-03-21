@@ -51,6 +51,10 @@ group :development, :test do
   gem 'html2haml'
   gem 'thin'
   gem 'teaspoon-mocha'
+  # use js in capybara
+  gem "poltergeist"
+  gem 'selenium-webdriver'
+  # syntax police
   # gem 'rubocop'
   # gem 'rubocop-rspec'
 end
