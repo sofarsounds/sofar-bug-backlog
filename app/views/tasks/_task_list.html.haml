@@ -8,8 +8,9 @@
         %th Days Elapsed
         %th Priority
         %th # Reported
-        %th Completed
-        %th Actions
+        - unless @kiosk_mode
+          %th Completed
+          %th Actions
     %tbody
       - tasks.each do |task|
         %tr{id: task.id, class:"#{task.late? ? 'late-task' : ''}"}
@@ -24,12 +25,13 @@
           %td.text
             %span{id: "#{task.id}-inc"}
               = task.reported_count
-            = link_to inc_task_path(task), remote: true do
-              %i.icon-plus
-          %td.text-success= task.completed
-
-          %td
-            = link_to edit_task_path(task), remote: true do
-              %i.icon-edit
-            = link_to task_path(task), remote: true, method: :delete, data: {confirm: "Are you sure you want to delete task #{task.title}?"} do
-              %i.icon-remove
+            - unless @kiosk_mode
+              = link_to inc_task_path(task), remote: true do
+                %i.icon-plus
+          - unless @kiosk_mode
+            %td.text-success= task.completed
+            %td
+              = link_to edit_task_path(task), remote: true do
+                %i.icon-edit
+              = link_to task_path(task), remote: true, method: :delete, data: {confirm: "Are you sure you want to delete task #{task.title}?"} do
+                %i.icon-remove

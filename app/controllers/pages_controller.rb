@@ -1,8 +1,18 @@
 class PagesController < ApplicationController
-end
+  layout proc { |controller| controller.action_name == 'kiosk' ? "kiosk" : "application" }
+  before_filter :assign_tasks
 
-class PagesController < ApplicationController
   def home
-  	@tasks = Task.order(priority: :desc, reported_count: :desc)
+    @kiosk_mode = false
   end
+
+  def kiosk
+    @kiosk_mode = true
+  end
+
+  private
+
+    def assign_tasks
+      @tasks = Task.order(priority: :desc, reported_count: :desc)
+    end
 end
