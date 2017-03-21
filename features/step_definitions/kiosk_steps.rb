@@ -17,3 +17,7 @@ end
 Then(/^I should not see row delete buttons$/) do
   expect(page).to_not have_selector :css, '.icon-remove'
 end
+
+Then(/^I should not see completed col$/) do
+  expect(page).to_not have_selector :css, '.icon-remove'
+end

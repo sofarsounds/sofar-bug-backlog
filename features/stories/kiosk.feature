@@ -9,3 +9,4 @@ Feature: Kiosk Mode
       And I should not see row +1 buttons
       And I should not see row edit buttons
       And I should not see row delete buttons
+      And I should not see "Completed"
