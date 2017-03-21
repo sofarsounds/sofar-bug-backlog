@@ -8,8 +8,8 @@
         %th Days Elapsed
         %th Priority
         %th # Reported
-        %th Completed
         - unless @kiosk_mode
+          %th Completed
           %th Actions
     %tbody
       - tasks.each do |task|
@@ -28,9 +28,8 @@
             - unless @kiosk_mode
               = link_to inc_task_path(task), remote: true do
                 %i.icon-plus
-          %td.text-success= task.completed
-
           - unless @kiosk_mode
+            %td.text-success= task.completed
             %td
               = link_to edit_task_path(task), remote: true do
                 %i.icon-edit
