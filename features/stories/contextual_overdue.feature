@@ -3,6 +3,10 @@ Feature: Homepage exists
   As a user
   The number of days consistuting an overdue bug should vary depending on importance
 
+  Scenario: See overdue days key
+    When I visit the homepage
+    Then I should see "Red mean late! Highest: 3 days, high: 10 days, medium: 20 days, low: 30 days."
+
   Scenario Outline: Overdue edge cases
     Given a task exists of <priority> priority and <days> days since created
     Then the task <is_overdue> overdue
