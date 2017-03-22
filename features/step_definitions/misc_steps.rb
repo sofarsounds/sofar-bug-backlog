@@ -9,3 +9,7 @@ end
 Then(/^the window title is "([^"]*)"$/) do |content|
   expect(page).to have_title content
 end
+
+Then /^show me the page$/ do
+  save_and_open_page
+end

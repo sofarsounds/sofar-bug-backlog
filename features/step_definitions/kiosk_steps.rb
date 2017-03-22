@@ -21,3 +21,7 @@ end
 Then(/^I should not see completed col$/) do
   expect(page).to_not have_selector :css, '.icon-remove'
 end
+
+Then(/^I should not see hyperlinks$/) do
+  expect(page).to_not have_selector :css, 'td a'
+end
