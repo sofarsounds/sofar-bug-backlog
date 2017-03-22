@@ -3,6 +3,12 @@ class Task < ActiveRecord::Base
 	validate :future_completed_date
 
 	DAYS_LATE = 10
+	PRIORITIES = {
+		highest: 3,
+		high: 2,
+		medium: 1,
+		low: 0
+	}
 
 	def days_elapsed_since_creation
 		(Time.now.to_date - self.created_at.to_date).to_i
