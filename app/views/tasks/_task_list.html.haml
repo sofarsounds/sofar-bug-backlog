@@ -30,7 +30,7 @@
             - unless @kiosk_mode
               = link_to inc_task_path(task), remote: true do
                 %i.icon-plus
-          %td.text= task.bug_type  
+          %td.text= readable_bug_type(task) 
           - unless @kiosk_mode
             %td.text-success= task.completed
             %td
