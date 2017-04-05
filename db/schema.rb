@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170405145644) do
+ActiveRecord::Schema.define(version: 20170405153934) do
 
   create_table "tasks", force: true do |t|
     t.string   "title"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20170405145644) do
     t.integer  "priority",       limit: 255, default: 1
     t.integer  "reported_count",             default: 0
     t.string   "url"
-    t.string   "bug_type"
+    t.integer  "bug_type",       limit: 255
   end
 
 end

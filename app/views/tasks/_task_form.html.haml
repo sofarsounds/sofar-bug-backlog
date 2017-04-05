@@ -6,7 +6,7 @@
     = f.input :title, as: :string, input_html: { minlength: 10 }
     = f.input :url
     = f.input :priority, as: :select, collection: [ ["Highest", 3], ["High", 2], ["Medium", 1], ["Low", 0] ], :checked => [1]
-    = f.input :bug_type, as: :select, collection: [ "Front-end", "Back-end" ] 
+    = f.input :bug_type, as: :select, collection: [ "Front-end", "Back-end" ]
     - unless task.new_record?
       = f.input :reported_count, as: :integer
       = f.input :completed, as: :string, input_html: {class: 'datepicker', value: task.completed.present? ? localize(task.completed, format: '%d/%m/%Y') : nil }
