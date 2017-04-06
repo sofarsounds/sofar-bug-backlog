@@ -3,7 +3,7 @@ Feature: Bug types
   As a user
   The tasks should have a bug type field
 
-  Scenario Outline: Default bug type
+  Scenario: Default bug type
     Given a task exists of default bug type
     When I visit the homepage
     Then I should see "Back-end"
