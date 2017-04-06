@@ -1,7 +1,6 @@
 - if tasks.empty?
   %span.text-warning There are no tasks!
 - else
-  %p Red mean late! Highest: 3 days, high: 10 days, medium: 20 days, low: 30 days.
   %table.table.table-hover.table-bordered
     %thead
       %tr
@@ -30,7 +29,7 @@
             - unless @kiosk_mode
               = link_to inc_task_path(task), remote: true do
                 %i.icon-plus
-          %td.text= readable_bug_type(task) 
+          %td.text= readable_bug_type(task)
           - unless @kiosk_mode
             %td.text-success= task.completed
             %td
