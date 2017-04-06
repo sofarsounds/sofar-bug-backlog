@@ -1,8 +1,13 @@
 class TasksController < ApplicationController
 	layout proc { |controller| controller.action_name == 'kiosk' ? "kiosk" : "application" }
+	before_filter :assign_tasks, only: [:index, :kiosk]
 
 	def index
-		@tasks = Task.order(priority: :desc, reported_count: :desc)
+		@kiosk_mode = false
+	end
+
+	def kiosk
+		@kiosk_mode = true
 	end
 
 	def new
@@ -39,7 +44,12 @@ class TasksController < ApplicationController
 		render :update_inc
 	end
 
-	private
+	protected
+
+	def assign_tasks
+		@tasks = Task.order(priority: :desc, reported_count: :desc)
+	end
+
 	def save_task
 	  if @task.save
 	    @tasks = Task.all
@@ -48,6 +58,8 @@ class TasksController < ApplicationController
 	    render :show_form
 	  end
 	end
+
+	private
 
 	def task_params
 	  params.require(:task).permit(:title, :note, :priority, :bug_type, :completed, :reported_count, :url, :created_at)
