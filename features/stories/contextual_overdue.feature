@@ -3,8 +3,12 @@ Feature: Homepage exists
   As a user
   The number of days consistuting an overdue bug should vary depending on importance
 
-  Scenario: See overdue days key
+  Scenario: See overdue days key (homepage)
     When I visit the homepage
+    Then I should see "Red means late! Highest: 3 days, high: 10 days, medium: 20 days, low: 30 days." once
+
+  Scenario: See overdue days key (kiosk)
+    When I visit the kiosk page
     Then I should see "Red means late! Highest: 3 days, high: 10 days, medium: 20 days, low: 30 days." once
 
   Scenario Outline: Overdue edge cases
