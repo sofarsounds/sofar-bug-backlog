@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
  root to:  'tasks#index'
-
- get 'kiosk' => 'tasks#index', as: :kiosk
+ get 'kiosk' => 'tasks#kiosk', as: :kiosk
 
  resources :tasks do
    member do
