@@ -1,4 +1,9 @@
 class TasksController < ApplicationController
+	layout proc { |controller| controller.action_name == 'kiosk' ? "kiosk" : "application" }
+
+	def index
+		@tasks = Task.order(priority: :desc, reported_count: :desc)
+	end
 
 	def new
 	  @task = Task.new

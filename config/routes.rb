@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
- root to:  'pages#home'
+ root to:  'tasks#index'
 
- get 'kiosk' => 'pages#kiosk', as: :kiosk
+ get 'kiosk' => 'tasks#index', as: :kiosk
 
- resources :tasks, except: [:index] do
+ resources :tasks do
    member do
      get :inc
    end
