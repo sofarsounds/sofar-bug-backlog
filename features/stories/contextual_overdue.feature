@@ -5,7 +5,7 @@ Feature: Homepage exists
 
   Scenario: See overdue days key
     When I visit the homepage
-    Then I should see "Red means late! Highest: 3 days, high: 10 days, medium: 20 days, low: 30 days."
+    Then I should see "Red means late! Highest: 3 days, high: 10 days, medium: 20 days, low: 30 days." once
 
   Scenario Outline: Overdue edge cases
     Given a task exists of <priority> priority and <days> days since created
