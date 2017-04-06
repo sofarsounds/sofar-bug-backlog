@@ -13,4 +13,12 @@ module TasksHelper
     end
   end
 
+  def readable_bug_type(task)
+    case task.bug_type
+    when 2
+      "Front-end"
+    when 1
+      "Back-end"
+    end 
+  end    
 end
