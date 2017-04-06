@@ -4,8 +4,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.16'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3',   group: :development
-gem 'pg',        group: :production
+# gem 'sqlite3',   group: :development
+gem 'pg',        group: :development
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -54,6 +54,7 @@ group :development, :test do
   # use js in capybara
   gem "poltergeist"
   gem 'selenium-webdriver'
+  gem 'launchy'
   # syntax police
   # gem 'rubocop'
   # gem 'rubocop-rspec'

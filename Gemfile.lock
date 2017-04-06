@@ -101,6 +101,8 @@ GEM
     json_spec (1.1.4)
       multi_json (~> 1.0)
       rspec (>= 2.0, < 4.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
     method_source (0.8.2)
@@ -208,7 +210,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
-    sqlite3 (1.3.13)
     teaspoon (1.1.5)
       railties (>= 3.2.5, < 6)
     teaspoon-mocha (2.3.3)
@@ -246,6 +247,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   json_spec
+  launchy
   newrelic_rpm
   pg
   poltergeist
@@ -261,7 +263,6 @@ DEPENDENCIES
   selenium-webdriver
   simple_form
   spring
-  sqlite3
   teaspoon-mocha
   thin
   uglifier (>= 1.3.0)
