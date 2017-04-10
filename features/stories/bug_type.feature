@@ -15,5 +15,5 @@ Feature: Bug types
 
     Examples:
       | bug_type  | readable_bug_type   |
-      | 1         | "Back-end"          |
-      | 2         | "Front-end"         |
+      | 1         | "Backend"          |
+      | 2         | "Frontend"         |
