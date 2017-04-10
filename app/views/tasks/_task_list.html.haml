@@ -10,7 +10,6 @@
         %th # Reported
         %th Type
         - unless @kiosk_mode
-          %th Completed
           %th Actions
     %tbody
       - tasks.each do |task|
@@ -31,7 +30,6 @@
                 %i.icon-plus
           %td.text= readable_bug_type(task)
           - unless @kiosk_mode
-            %td.text-success= task.completed
             %td
               = link_to edit_task_path(task), remote: true do
                 %i.icon-edit
