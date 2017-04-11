@@ -6,7 +6,7 @@ Feature: Bug types
   Scenario: Default bug type
     Given a task exists of default bug type
     When I visit the homepage
-    Then I should see "Back-end"
+    Then I should see "Backend"
 
   Scenario Outline: Bug types
     Given a task exists of <bug_type> bug type
@@ -15,5 +15,5 @@ Feature: Bug types
 
     Examples:
       | bug_type  | readable_bug_type   |
-      | 1         | "Back-end"          |
-      | 2         | "Front-end"         |
+      | 1         | "Backend"          |
+      | 2         | "Frontend"         |

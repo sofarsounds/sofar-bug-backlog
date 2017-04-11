@@ -16,9 +16,9 @@ module TasksHelper
   def readable_bug_type(task)
     case task.bug_type
     when 2
-      "Front-end"
+      "Frontend"
     when 1
-      "Back-end"
-    end 
-  end    
+      "Backend"
+    end
+  end
 end
